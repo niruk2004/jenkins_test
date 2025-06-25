@@ -1,17 +1,10 @@
-pipeline:
-  agent:
-    any:
-  stages:
-    - stage: "printing before"
-      steps:
-        - sh "echo 'BEFOREEEEE!!!'"
-    - stage: "debug"
-      steps:
-        - sh "ls -la"
-    - stage: "run python app"
-      steps:
-        - sh 'python3 pythonapp.py'
-        - sh "echo 'done running the app'"
-    - stage: "printing wonderful"
-      steps:
-        - sh "echo 'wonderful!'"
+pipeline {
+    agent any
+    stages {
+        stage('Run Python Script') {
+            steps {
+                sh 'python3 pythonapp.py'
+            }
+        }
+    }
+}
