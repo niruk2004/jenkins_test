@@ -5,8 +5,7 @@ pipeline:
   stages:
     - stage: "checkout"
       steps:
-        - script: |
-            checkout scm
+        - sh 'git clone https://github.com/niruk2004/jenkins_test.git .'
     - stage: "run python app"
       steps:
         - sh 'python3 pythonapp.py'
