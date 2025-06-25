@@ -1,6 +1,11 @@
 pipeline:
-  agent: any
+  agent:
+    any:
   stages:
-    - stage: Run Python Script
+    - stage: "run python app"
       steps:
-        - sh: "python3 pythonapp.py"
+        - sh "python3 pythonapp.py"
+        - sh "echo 'done running the app'"
+    - stage: "printing wonderful"
+      steps:
+        - sh "echo 'wonderful!'"
