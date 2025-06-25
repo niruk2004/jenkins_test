@@ -7,7 +7,7 @@ pipeline:
         - sh "echo 'BEFOREEEEE!!!'"
     - stage: "debug"
       steps:
-        - sh: "ls -la"
+        - sh "ls -la"
     - stage: "run python app"
       steps:
         - sh "python3 pythonapp.py"
