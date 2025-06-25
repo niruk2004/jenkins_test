@@ -1,7 +1,10 @@
-pipeline:
-  agent:
-    label: any
-  stages:
-    - stage: Run Python Script
-      steps:
-        - sh: python3 pythonapp.py
+pipeline {
+    agent any
+    stages {
+        stage('Run Python Script') {
+            steps {
+                sh 'python3 pythonapp.py'
+            }
+        }
+    }
+}
