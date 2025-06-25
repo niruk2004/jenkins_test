@@ -5,6 +5,9 @@ pipeline:
     - stage: "printing before"
       steps:
         - sh "echo 'BEFOREEEEE!!!'"
+    - stage: "debug"
+      steps:
+        - sh: "ls -la"
     - stage: "run python app"
       steps:
         - sh "python3 pythonapp.py"
