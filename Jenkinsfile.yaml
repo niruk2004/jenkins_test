@@ -2,6 +2,9 @@ pipeline:
   agent:
     any:
   stages:
+    - stage: "printing before"
+      steps:
+        - sh "echo 'BEFOREEEEE!!!'"
     - stage: "run python app"
       steps:
         - sh "python3 pythonapp.py"
