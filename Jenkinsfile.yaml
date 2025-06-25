@@ -1,17 +1,17 @@
 pipeline:
   agent:
     any:
+
   stages:
-    - stage: "printing before"
+    - stage: "checkout"
       steps:
-        - sh "echo 'BEFOREEEEE!!!'"
-    - stage: "debug"
-      steps:
-        - sh "ls -la"
+        - script:
+            groovy: |
+              checkout scm
     - stage: "run python app"
       steps:
-        - sh 'python3 pythonapp.py'
-        - sh "echo 'done running the app'"
-    - stage: "printing wonderful"
+        - sh "python3 pythonapp.py"
+
+    - stage: "done"
       steps:
-        - sh "echo 'wonderful!'"
+        - sh "echo 'Pipeline execution complete!'"
