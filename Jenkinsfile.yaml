@@ -5,13 +5,11 @@ pipeline:
   stages:
     - stage: "checkout"
       steps:
-        - script:
-            groovy: |
-              checkout scm
+        - script: |
+            checkout scm
     - stage: "run python app"
       steps:
-        - sh "python3 pythonapp.py"
-
+        - sh 'python3 pythonapp.py'
     - stage: "done"
       steps:
-        - sh "echo 'Pipeline execution complete!'"
+        - sh 'echo Pipeline execution complete!'
